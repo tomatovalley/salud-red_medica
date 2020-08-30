@@ -54,7 +54,10 @@
 <script>
 // Importamos los datos que van a estar en formato json
 import JSONData from './data.json'
+// import firebase from 'firebase'
+import { db } from './db'
 
+console.log(db)
 // Estructura de nuestro componente
 export default {
   data: () => ({
