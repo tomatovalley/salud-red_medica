@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <h1 class="text-center">RedMedica</h1>
     <div> 
       <!-- <select v-model="filtro.pais">
@@ -13,7 +13,7 @@
         <option>Estados Unidos</option>
       </select> -->
 
-      <select v-model="filtro.ciudad" v-if="ciudades">
+      <select v-model="filtro.ciudad" v-if="ciudades" class="form-control d-inline-block mr-4" style="width: 200px">
         <option value="" disabled selected hidden>Elije la ciudad</option>
         <option
           v-for="ciudad in ciudades"
@@ -22,13 +22,13 @@
         >{{ ciudad.nombre }}</option>
       </select>
 
-      <button class="btn btn-primary" type="button" @click="applySearch">Buscar </button>
-      <button class="btn btn-primary" type="button" @click="removeFilters">Quitar Filtros </button> 
+      <button class="btn btn-outline-primary mr-2" type="button" @click="applySearch">Buscar </button>
+      <button class="btn btn-outline-secondary" type="button" @click="removeFilters">Quitar Filtros </button> 
     </div>
       <br>
-    <button class="btn btn-primary" type="button" @click="section = 'Covid19'">Covid19 </button>
-    <button class="btn btn-primary" type="button" @click="section = 'Emergencias'">Emergencias </button>
-    <table striped hover :items="items" :fields="fields">
+    <button class="btn btn-danger" type="button" @click="section = 'Covid19'">Covid19 </button>
+    <button class="btn btn-info" type="button" @click="section = 'Emergencias'">Emergencias </button>
+    <table class="table">
       <thead>
         <tr>
           <th>Hospital</th>
@@ -132,25 +132,3 @@ export default {
   
 }
 </script>
-
-
-<style>
-#app {
-  padding: 0 15rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-select {
-  margin: 0 1rem;
-}
-</style>
