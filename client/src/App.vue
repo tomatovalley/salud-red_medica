@@ -1,6 +1,8 @@
 <template>
   <div id="app" class="container">
     <h1 class="text-center">RedMedica</h1>
+    
+
     <div> 
       <select v-model="filtro.ciudad" v-if="ciudades" class="form-control d-inline-block mr-4" style="width: 200px">
         <option value="" disabled selected hidden>Elije la ciudad</option>
