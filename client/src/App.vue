@@ -35,6 +35,8 @@
           <th>Hospital</th>
           <th>Cupo</th>
           <th>Dirección</th>
+          <th>Distancia</th>
+
         </tr>
       </thead>
       <tbody>
@@ -44,10 +46,12 @@
           <td>
             <a
               :href="`https://www.google.com/maps/search/${hospital.direccion}`"
+              target="_blank"
             >
               {{ hospital.direccion }}
             </a>
           </td>
+          <td></td>
         </tr>
       </tbody>
     </table>
