@@ -83,7 +83,7 @@ export default {
     section: function(newVal) {
       // Es el handler para cuando cambie el valor del section
       if (newVal === 'Covid19') {
-        this.hospitales = this.hospitales.filter(h => h.Tipo === newVal)
+        this.hospitales = this.hospitales.filter(h => h.tipo === newVal)
         return
       }
 
