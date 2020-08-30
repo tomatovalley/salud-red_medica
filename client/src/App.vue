@@ -28,7 +28,7 @@
     </div>
 
     <button @click="section = 'Covid19'">Covid19</button>
-    <button @click="section = ''">Emergencias</button>
+    <button @click="section = 'Emergencias'">Emergencias</button>
     <table>
       <thead>
         <tr>
@@ -86,7 +86,10 @@ export default {
         this.hospitales = this.hospitales.filter(h => h.tipo === newVal)
         return
       }
-
+      if(newVal === 'Emergencias') {
+        this.hospitales = this.hospitales.filter(h => h.tipo === newVal)
+        return
+      }
       // this.hospitales = JSONData.Hospitales
     }
   },
