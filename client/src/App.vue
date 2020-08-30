@@ -3,7 +3,7 @@
     <h1 class="text-center">RedMedica</h1>
 
     <div>
-      <select v-model="filtro.pais">
+      <!-- <select v-model="filtro.pais">
         <option value="" disabled selected hidden>Elije el país</option>
         <option value="México">México</option>
       </select>
@@ -12,12 +12,15 @@
         <option value="" disabled selected hidden>Elije el estado</option>
         <option value="México">México</option>
         <option>Estados Unidos</option>
-      </select>
+      </select> -->
 
-      <select v-model="filtro.ciudad">
+      <select v-model="filtro.ciudad" v-if="ciudades">
         <option value="" disabled selected hidden>Elije la ciudad</option>
-        <option value="Guanajuato">Guanajuato</option>
-        <option value="Guadalajara">Guadalajara</option>
+        <option
+          v-for="ciudad in ciudades"
+          :key="ciudad.id"
+          :value="ciudad.id"
+        >{{ ciudad.nombre }}</option>
       </select>
 
       <button @click="applySearch">Buscar</button>
@@ -35,14 +38,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(hospital, key) in hospitals" :key="key">
-          <td>{{ hospital.Hospital }}</td>
-          <td>{{ hospital['Cupos Disponibles'] || 0 }}</td>
+        <tr v-for="hospital in hospitales" :key="hospital.id">
+          <td>{{ hospital.nombre }}</td>
+          <td>{{ hospital.cupos_disponibles }}</td>
           <td>
             <a
-              :href="`https://www.google.com/maps/search/${hospital.Dirección}`"
+              :href="`https://www.google.com/maps/search/${hospital.direccion}`"
             >
-              {{ hospital.Dirección }}
+              {{ hospital.direccion }}
             </a>
           </td>
         </tr>
@@ -53,7 +56,7 @@
 
 <script>
 // Importamos los datos que van a estar en formato json
-import JSONData from './data.json'
+// import JSONData from './data.json'
 import { db } from './db'
 
 console.log(db)
@@ -66,52 +69,58 @@ export default {
       // Va a guardar los valores del filtro
       pais: '',
       estado: '',
-      ciudad: ''
+      ciudad: '',
+      ciudades: []
     },
     section: '', // Se encarga de guardar la seccion de la busqueda 'Covid19' ó 'Emergencias'
-    hospitals: [] // Va a guardar los datos de los hospitales para manejarlos dentro del componente
+    hospitales: [] // Va a guardar los datos de los hospitales para manejarlos dentro del componente
   }),
+  firestore: {
+    ciudades: db.collection('ciudades'),
+    hospitales: db.collection('hospitales')
+  },
   watch: {
     section: function(newVal) {
       // Es el handler para cuando cambie el valor del section
       if (newVal === 'Covid19') {
-        this.hospitals = this.hospitals.filter(h => h.Tipo === newVal)
+        this.hospitales = this.hospitales.filter(h => h.Tipo === newVal)
         return
       }
 
-      this.hospitals = JSONData.Hospitales
+      // this.hospitales = JSONData.Hospitales
     }
   },
   mounted() {
     // Hace la carga inicial de los datos
-    this.hospitals = JSONData.Hospitales
+    // this.hospitals = JSONData.Hospitales
+    // console.log(this.ciudades)
   },
   methods: {
     applySearch() {
       // Hace el manejo de la busqueda y la filtra para ser mostrada
-      if (this.filtro.pais.length) {
-        this.hospitals = this.hospitals.filter(h => h.Pais === this.filtro.pais)
-      }
+      // if (this.filtro.pais.length) {
+      //   this.hospitales = this.hospitales.filter(h => h.Pais === this.filtro.pais)
+      // }
 
-      if (this.filtro.estado.length) {
-        this.hospitals = this.hospitals.filter(
-          h => h.Estado === this.filtro.estado
-        )
-      }
+      // if (this.filtro.estado.length) {
+      //   this.hospitales = this.hospitales.filter(
+      //     h => h.Estado === this.filtro.estado
+      //   )
+      // }
 
       if (this.filtro.ciudad.length) {
-        this.hospitals = this.hospitals.filter(
+        this.hospitales = this.hospitales.filter(
           h => h.Ciudad === this.filtro.ciudad
         )
       }
     },
     removeFilters() {
       // Reinicia los valores del filtro y carga los datos iniciales de los hospitales
-      this.filtro.pais = ''
-      this.filtro.estado = ''
+      // this.filtro.pais = ''
+      // this.filtro.estado = ''
       this.filtro.ciudad = ''
 
-      this.hospitals = JSONData.Hospitales
+      // this.hospitals = JSONData.Hospitales
     }
   }
 }
