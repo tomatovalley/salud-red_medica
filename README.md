@@ -4,6 +4,14 @@
 
 # Equipo 30 - RedMedica
 
+## Stack
+Para realizar este proyecto utilizamos: 
+* Vue
+* Firebase
+
+
+
+
 ## Descargar proyecto
 ```
 git clone https://github.com/tomatovalley/salud-red_medica.git
@@ -15,11 +23,12 @@ git clone https://github.com/tomatovalley/salud-red_medica.git
 
 ## Iniciar servidor
 ```
+npm run serve
 ```
 
 ## Ver sitio
 ```
-http://localhost: 
+http://localhost:8080
 ```
 
 
