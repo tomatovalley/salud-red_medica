@@ -2,17 +2,6 @@
   <div id="app" class="container">
     <h1 class="text-center">RedMedica</h1>
     <div> 
-      <!-- <select v-model="filtro.pais">
-        <option value="" disabled selected hidden>Elije el país</option>
-        <option value="México">México</option>
-      </select>
-
-      <select v-model="filtro.estado">
-        <option value="" disabled selected hidden>Elije el estado</option>
-        <option value="México">México</option>
-        <option>Estados Unidos</option>
-      </select> -->
-
       <select v-model="filtro.ciudad" v-if="ciudades" class="form-control d-inline-block mr-4" style="width: 200px">
         <option value="" disabled selected hidden>Elije la ciudad</option>
         <option
@@ -34,7 +23,6 @@
           <th>Hospital</th>
           <th>Cupo</th>
           <th>Dirección</th>
-          <th>Distancia</th>
         </tr>
       </thead>
       <tbody>
@@ -49,7 +37,6 @@
               {{ hospital.direccion }}
             </a>
           </td>
-          <td></td>
         </tr>
       </tbody>
     </table>
@@ -57,12 +44,7 @@
 </template>
 
 <script>
-// Importamos los datos que van a estar en formato json
-// import JSONData from './data.json'
 import { db } from './db'
-
-console.log(db)
-
 
 // Estructura de nuestro componente
 export default {
@@ -75,12 +57,9 @@ export default {
       ciudades: []
     },
     section: '', // Se encarga de guardar la seccion de la busqueda 'Covid19' ó 'Emergencias'
-    hospitales: [] // Va a guardar los datos de los hospitales para manejarlos dentro del componente
+    hospitales: [], // Va a guardar los datos de los hospitales para manejarlos dentro del componente
+    ciudades: []
   }),
-  firestore: {
-    ciudades: db.collection('ciudades'),
-    hospitales: db.collection('hospitales')
-  },
   watch: {
     section: function(newVal) {
       // Es el handler para cuando cambie el valor del section
@@ -92,40 +71,26 @@ export default {
         this.hospitales = this.hospitales.filter(h => h.tipo === newVal)
         return
       }
-      // this.hospitales = JSONData.Hospitales
+      this.hospitales = db.collection('hospitales')
     }
   },
   mounted() {
-    // Hace la carga inicial de los datos
-    // this.hospitals = JSONData.Hospitales
-    // console.log(this.ciudades)
+    this.$bind('ciudades', db.collection('ciudades'))
+    this.$bind('hospitales', db.collection('hospitales'))
   },
   methods: {
     applySearch() {
-      // Hace el manejo de la busqueda y la filtra para ser mostrada
-      // if (this.filtro.pais.length) {
-      //   this.hospitales = this.hospitales.filter(h => h.Pais === this.filtro.pais)
-      // }
-
-      // if (this.filtro.estado.length) {
-      //   this.hospitales = this.hospitales.filter(
-      //     h => h.Estado === this.filtro.estado
-      //   )
-      // }
-
       if (this.filtro.ciudad.length) {
         this.hospitales = this.hospitales.filter(
-          h => h.Ciudad === this.filtro.ciudad
+          h => h.ciudad_id === this.filtro.ciudad
         )
       }
     },
     removeFilters() {
       // Reinicia los valores del filtro y carga los datos iniciales de los hospitales
-      // this.filtro.pais = ''
-      // this.filtro.estado = ''
       this.filtro.ciudad = ''
 
-      // this.hospitals = JSONData.Hospitales
+      this.$bind('hospitales', db.collection('hospitales'))
     }
   }
 
