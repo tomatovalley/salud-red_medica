@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <h1 class="text-center">RedMedica</h1>
-
-    <div>
+    <div> 
       <!-- <select v-model="filtro.pais">
         <option value="" disabled selected hidden>Elije el país</option>
         <option value="México">México</option>
@@ -23,20 +22,19 @@
         >{{ ciudad.nombre }}</option>
       </select>
 
-      <button @click="applySearch">Buscar</button>
-      <button @click="removeFilters">Quitar Filtros</button>
+      <button class="btn btn-primary" type="button" @click="applySearch">Buscar </button>
+      <button class="btn btn-primary" type="button" @click="removeFilters">Quitar Filtros </button> 
     </div>
-
-    <button @click="section = 'Covid19'">Covid19</button>
-    <button @click="section = 'Emergencias'">Emergencias</button>
-    <table>
+      <br>
+    <button class="btn btn-primary" type="button" @click="section = 'Covid19'">Covid19 </button>
+    <button class="btn btn-primary" type="button" @click="section = 'Emergencias'">Emergencias </button>
+    <table striped hover :items="items" :fields="fields">
       <thead>
         <tr>
           <th>Hospital</th>
           <th>Cupo</th>
           <th>Dirección</th>
           <th>Distancia</th>
-
         </tr>
       </thead>
       <tbody>
@@ -130,8 +128,11 @@ export default {
       // this.hospitals = JSONData.Hospitales
     }
   }
+
+  
 }
 </script>
+
 
 <style>
 #app {
