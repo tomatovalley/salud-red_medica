@@ -1,7 +1,33 @@
-# Equipo TU_EQUIPO
-Hola mensaje de Nancy
-Aquí deberás escribir toda la información de tu proyecto.
+<p align="center">
+<img src="https://github.com/tomatovalley/salud-red_medica/blob/master/red-medica.png" width="200" title="Red Medica Logo">
+</p>
 
-Antes de comenzar, por favor revisa las [las instrucciones](INSTRUCTIONS.md).
+# Equipo 30 - RedMedica
 
-![Hack Hero gif](https://media.giphy.com/media/IbHp2s31XVjCyfGZ5L/giphy.gif)
+## Descargar proyecto
+```
+git clone https://github.com/tomatovalley/salud-red_medica.git
+```
+
+## Instalar dependencias
+```
+```
+
+## Iniciar servidor
+```
+```
+
+## Ver sitio
+```
+http://localhost: 
+```
+
+
+## Integrantes del equipo 
+- [NancyCarmona](https://github.com/NancyCarmona)
+- [johancruz24](https://github.com/johancruz24)
+- [Juan C Felizzola](https://github.com/JuanCaDev)
+- [Lorena G. Moreno](https://github.com/lorena1m)
+- [ElvisHuerta](https://github.com/ElvisHuerta)
+
+
