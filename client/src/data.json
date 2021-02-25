@@ -1,0 +1,96 @@
+{
+  "Hospitales": [
+    {
+      "Cupos Disponibles": 20,
+      "Dirección": "Prol. 5 de Mayo 3170, Ex hacienda de Tarango, Álvaro Obregón, 01620 Ciudad de México, CDMX, México",
+      "Distancia": "5Km",
+      "Hospital": " Hospital General Enrique Cabrera ",
+      "Tipo": "General",
+      "Pais": "México",
+      "Estado": "México",
+      "Ciudad": "Guanajuato"
+    },
+    {
+      "Cupos Disponibles": 12,
+      "Dirección": "Calz. San Juan de Aragón 285, Granjas Modernas, Gustavo A. Madero, 07460 Ciudad de México, CDMX, México",
+      "Distancia": "7,5Km",
+      "Hospital": "Hospital Pediátrico La Villa",
+      "Tipo": "Covid19",
+      "Pais": "México",
+      "Estado": "México",
+      "Ciudad": "Guadalajara"
+    },
+    {
+      "Cupos Disponibles": 3,
+      "Dirección": "Dr. Balmis 148, Doctores, Cuauhtémoc, 06720 Ciudad de México, CDMX, México",
+      "Distancia": "1Km",
+      "Hospital": "Hospital General de México “Dr. Eduardo Liceaga”",
+      "Tipo": "General",
+      "Pais": "México",
+      "Estado": "México",
+      "Ciudad": "Guadalajara"
+    },
+    {
+      "Cupos Disponibles": 5,
+      "Dirección": "Calle Riobamba 639, Lindavista Sur, Gustavo A. Madero, 07760 Ciudad de México, CDMX, México",
+      "Distancia": "500m",
+      "Hospital": "Hospital Ángeles Lindavista",
+      "Tipo ": "General",
+      "Pais": "México",
+      "Estado": "México",
+      "Ciudad": "Guanajuato"
+    },
+    {
+      "Cupos Disponibles": 8,
+      "Dirección": "Camino de Sta. Teresa 1055-S, Heroes de Padierna, Héroes de Padierna, La Magdalena Contreras, 10700 Ciudad de México, CDMX, México",
+      "Distancia": "3Km",
+      "Hospital": "Hospital Ángeles del Pedregal",
+      "Tipo": "General",
+      "Pais": "México",
+      "Estado": "México",
+      "Ciudad": "Guanajuato"
+    },
+    {
+      "Cupos Disponibles": 7,
+      "Dirección": "Av. Cuauhtémoc 330, Doctores, Cuauhtémoc, 06720 Ciudad de México, CDMX, México",
+      "Distancia": "2.5Km",
+      "Hospital": "Centro Médico Nacional Siglo XXI",
+      "Tipo": "Covid19"
+    },
+    {
+      "Cupos Disponibles": 0,
+      "Dirección": "Calle Doctor Márquez 162 Delegación:, Doctores, Cuauhtémoc, 06720 Ciudad de México, CDMX, México",
+      "Distancia": "1Km",
+      "Hospital": "Hospital Infantil de México, Federico Gómez",
+      "Tipo": "Covid19"
+    },
+    {
+      "Cupos Disponibles": 6,
+      "Dirección": "Av. México Coyoacán S/N, Gral Anaya, Benito Juárez, 03340 Ciudad de México, CDMX, México",
+      "Distancia": "5Km",
+      "Hospital": "Hospital General Xoco ",
+      "Tipo": "General"
+    },
+    {
+      "Cupos Disponibles": 3,
+      "Dirección": "Tlacotalpan 59, Roma Sur, Cuauhtémoc, 06760 Ciudad de México, CDMX, México",
+      "Distancia": "2Km",
+      "Hospital": "Hospital Ángeles Metropolitano",
+      "Tipo": "Covid19"
+    },
+    {
+      "Cupos Disponibles": 2,
+      "Dirección": "Sur 136 116, Las Américas, Álvaro Obregón, 01120 Ciudad de México, CDMX, México",
+      "Distancia": "760m",
+      "Hospital": "Centro Médico ABC",
+      "Tipo": "General"
+    },
+    {
+      "Cupos Disponibles": 5,
+      "Dirección": "Calle Gustavo J. Esq, Víctor Hernández, Francisco Villa, 02400 Ciudad de México, México",
+      "Distancia": "2Km",
+      "Hospital": "Hospital Materno Infantil Dr. Nicolas M. Cedillo Soriano",
+      "Tipo": "General"
+    }
+  ]
+}

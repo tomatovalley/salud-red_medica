@@ -1,7 +1,42 @@
-# Equipo TU_EQUIPO
+<p align="center">
+<img src="https://github.com/tomatovalley/salud-red_medica/blob/master/red-medica.png" width="200" title="Red Medica Logo">
+</p>
 
-Aquí deberás escribir toda la información de tu proyecto.
+# Equipo 30 - RedMedica
 
-Antes de comenzar, por favor revisa las [las instrucciones](INSTRUCTIONS.md).
+## Stack
+Para realizar este proyecto utilizamos: 
+* Vue
+* Firebase
 
-![Hack Hero gif](https://media.giphy.com/media/IbHp2s31XVjCyfGZ5L/giphy.gif)
+
+
+
+## Descargar proyecto
+```
+git clone https://github.com/tomatovalley/salud-red_medica.git
+```
+
+## Instalar dependencias
+```
+```
+
+## Iniciar servidor
+```
+npm run serve
+```
+
+## Ver sitio
+```
+http://localhost:8080
+```
+
+
+## Integrantes del equipo 
+- [NancyCarmona](https://github.com/NancyCarmona)
+- [johancruz24](https://github.com/johancruz24)
+- [Juan C Felizzola](https://github.com/JuanCaDev)
+- [Lorena G. Moreno](https://github.com/lorena1m)
+- [ElvisHuerta](https://github.com/ElvisHuerta)
+
+
